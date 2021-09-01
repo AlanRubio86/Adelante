@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[Acceso] (
+    [IdUsuario]            INT          NULL,
+    [Acceso_Nickname]      VARCHAR (10) NOT NULL,
+    [Acceso_Password]      VARCHAR (10) NOT NULL,
+    [Acceso_MovCitas]      BIT          NOT NULL,
+    [Acceso_MovTrat]       BIT          NOT NULL,
+    [Acceso_CatUsuarios]   BIT          NOT NULL,
+    [Acceso_CatClientes]   BIT          NOT NULL,
+    [Acceso_CatAreas]      BIT          NOT NULL,
+    [Acceso_RepUsuarios]   BIT          NOT NULL,
+    [Acceso_RepClientes]   BIT          NOT NULL,
+    [Acceso_RepAreas]      BIT          NOT NULL,
+    [Acceso_RepProductos]  BIT          NOT NULL,
+    [Acceso_RepCitas]      BIT          NOT NULL,
+    [Acceso_RepTrat]       BIT          NOT NULL,
+    [Acceso_MovVentas]     BIT          NOT NULL,
+    [Acceso_MovCajas]      BIT          NOT NULL,
+    [Acceso_MovAbonos]     BIT          NOT NULL,
+    [Acceso_CatProductos]  BIT          NOT NULL,
+    [Acceso_CatCajas]      BIT          NOT NULL,
+    [Acceso_RepPunto]      BIT          NOT NULL,
+    [Acceso_RepMovUsuario] BIT          NOT NULL,
+    [Acceso_AdminDB]       BIT          NOT NULL,
+    [Acceso_Algortimo]     BIT          NOT NULL,
+    CONSTRAINT [PK_Acceso] PRIMARY KEY CLUSTERED ([Acceso_Nickname] ASC),
+    CONSTRAINT [FK_Acceso_Usuarios] FOREIGN KEY ([IdUsuario]) REFERENCES [dbo].[Usuarios] ([IdUsuario])
+);
+
