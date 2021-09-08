@@ -1,4 +1,4 @@
-﻿namespace SLD_v1._0
+﻿namespace Adelante
 {
     partial class frmlogin
     {

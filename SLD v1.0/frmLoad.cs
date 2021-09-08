@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using Microsoft.ApplicationBlocks.Data;
 using System.Net.Mail;
 
-namespace SLD_v1._0
+namespace Adelante
 {
     public partial class frmLoad : Form
     {

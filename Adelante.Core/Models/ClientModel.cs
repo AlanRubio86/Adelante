@@ -6,27 +6,16 @@ using System.Threading.Tasks;
 
 namespace Adelante.Core.Models
 {
-    public class UserModel
+    public class ClientModel
     {
-        public List<UserRoleModel> UserRoles { get; set; }
-
         public int Id { get; set; }
-
         public string Name { get; set; }
-
         public string LastName { get; set; }
-
-        public string CellPhone { get; set; }
-
-        public string UserName { get; set; }
-
-        public string Nickname { get; set; }
-
-        public string Password { get; set; }
-
+        public string Phone { get; set; }
+        public string Cellphone { get; set; }
+        public string Email { get; set; }
+        public string Gender { get; set; }
         public bool Active { get; set; }
-
-        public int RoleId { get; set; }
-
+        public List<ClientNeighborhoodModel> ClientNeighborhoods { get; set; }
     }
 }

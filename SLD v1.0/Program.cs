@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Adelante.Core.AutoMapper;
 
-namespace SLD_v1._0
+namespace Adelante
 {
     static class Program
     {

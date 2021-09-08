@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using panelCitas;
 
-namespace SLD_v1._0
+namespace Adelante
 {
     class PanelNodo
     {

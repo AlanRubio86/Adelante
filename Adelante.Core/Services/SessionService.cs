@@ -24,7 +24,7 @@ namespace Adelante.Core.Services
                 using (adelanteContext db = new adelanteContext())
                 {
 
-                    var user = db.Users.FirstOrDefault(find => find.UserName == username);
+                    var user = db.Users.Include("UserRoles.Role.RolePermissions").FirstOrDefault(find => find.UserName == username); 
                     if (user == null)
                     {
                         throw new Exception("User doesn't exists");

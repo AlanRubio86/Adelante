@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using Microsoft.ApplicationBlocks.Data;
 using System.IO;
 
-namespace SLD_v1._0
+namespace Adelante
 {
     public partial class frmClientes : BaseForm
     {

@@ -10,8 +10,9 @@ using System.Data.SqlClient;
 using Adelante.Core.Services;
 using Microsoft.ApplicationBlocks.Data;
 using escAlerta;
+using Newtonsoft.Json;
 
-namespace SLD_v1._0
+namespace Adelante
 {
     public partial class frmlogin : Form
     {
@@ -61,8 +62,8 @@ namespace SLD_v1._0
 
                     if (result != null)
                     {
-                        SLD_v1._0.Properties.Settings.Default.Accesos = dts;
-                        SLD_v1._0.Properties.Settings.Default.Sesion = true;
+                        Properties.Settings.Default.Accesos = JsonConvert.SerializeObject(result);
+                        Properties.Settings.Default.Sesion = true;
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }

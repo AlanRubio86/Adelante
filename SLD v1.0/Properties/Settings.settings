@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SLD_v1._0.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Accesos" Type="System.Data.DataSet" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="Accesos" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="Conexion" Type="System.String" Scope="User">
       <Value Profile="(Default)">Data Source=DESKTOP-IB4LJSG\SQLEXPRESS;Initial Catalog=SensaLaserDB;Persist Security Info=True;User ID=sa;Password=sql3adm8</Value>
@@ -18,6 +18,14 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=pc\sqlexpress;Initial Catalog=SensaLaserDB;Persist Security Info=True;User ID=sa;Password=sensa2133!!!!!!!</Value>
+    </Setting>
+    <Setting Name="dbAdelanteConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DESKTOP-IB4LJSG\SQLEXPRESS;Initial Catalog=dbAdelante;Persist Security Info=True;User ID=sa;Password=sql3adm8;MultipleActiveResultSets=True;Application Name=EntityFramework&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DESKTOP-IB4LJSG\SQLEXPRESS;Initial Catalog=dbAdelante;Persist Security Info=True;User ID=sa;Password=sql3adm8;MultipleActiveResultSets=True;Application Name=EntityFramework</Value>
     </Setting>
   </Settings>
 </SettingsFile>

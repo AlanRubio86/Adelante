@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using Microsoft.ApplicationBlocks.Data;
 using System.IO;
 
-namespace SLD_v1._0
+namespace Adelante
 {
     public partial class frmValidAccess : BaseForm
     {
@@ -71,7 +71,7 @@ namespace SLD_v1._0
 
         public void EditAndInsert(string psMensage, string psTitulo, int piEstado)
         {
-            SqlConnection Conexion = new SqlConnection(SLD_v1._0.Properties.Settings.Default.Conexion);
+            SqlConnection Conexion = new SqlConnection(Properties.Settings.Default.Conexion);
 
             Conexion.Open();
             SqlTransaction trans = Conexion.BeginTransaction();

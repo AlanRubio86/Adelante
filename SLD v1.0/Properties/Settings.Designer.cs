@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SLD_v1._0.Properties {
+namespace Adelante.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,9 +25,10 @@ namespace SLD_v1._0.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Data.DataSet Accesos {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string Accesos {
             get {
-                return ((global::System.Data.DataSet)(this["Accesos"]));
+                return ((string)(this["Accesos"]));
             }
             set {
                 this["Accesos"] = value;
@@ -67,6 +68,18 @@ namespace SLD_v1._0.Properties {
         public string SensaLaserDBConnectionString {
             get {
                 return ((string)(this["SensaLaserDBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-IB4LJSG\\SQLEXPRESS;Initial Catalog=dbAdelante;Persist Securit" +
+            "y Info=True;User ID=sa;Password=sql3adm8;MultipleActiveResultSets=True;Applicati" +
+            "on Name=EntityFramework")]
+        public string dbAdelanteConnectionString {
+            get {
+                return ((string)(this["dbAdelanteConnectionString"]));
             }
         }
     }

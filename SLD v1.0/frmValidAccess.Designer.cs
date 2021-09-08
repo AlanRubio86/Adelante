@@ -1,5 +1,5 @@
 ﻿using System.Drawing;
-namespace SLD_v1._0
+namespace Adelante
 {
     partial class frmValidAccess
     {
@@ -52,7 +52,7 @@ namespace SLD_v1._0
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnGuardar.BackgroundImage = global::SLD_v1._0.Properties.Resources._1904659_arrow_backup_down_download_save_storage_transfer_122509__1_;
+            this.btnGuardar.BackgroundImage = global::Adelante.Properties.Resources._1904659_arrow_backup_down_download_save_storage_transfer_122509__1_;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGuardar.Location = new System.Drawing.Point(86, 11);
             this.btnGuardar.TabIndex = 37;
@@ -61,7 +61,7 @@ namespace SLD_v1._0
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnEditar.BackgroundImage = global::SLD_v1._0.Properties.Resources._353430_checkbox_edit_pen_pencil_107516;
+            this.btnEditar.BackgroundImage = global::Adelante.Properties.Resources._353430_checkbox_edit_pen_pencil_107516;
             this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(192, 10);
             this.btnEditar.TabIndex = 38;
@@ -70,7 +70,7 @@ namespace SLD_v1._0
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnEliminar.BackgroundImage = global::SLD_v1._0.Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
+            this.btnEliminar.BackgroundImage = global::Adelante.Properties.Resources.seo_social_web_network_internet_262_icon_icons_com_61518;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnEliminar.Location = new System.Drawing.Point(404, 11);
             this.btnEliminar.TabIndex = 40;
@@ -79,7 +79,7 @@ namespace SLD_v1._0
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnBuscar.BackgroundImage = global::SLD_v1._0.Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
+            this.btnBuscar.BackgroundImage = global::Adelante.Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
             this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBuscar.Location = new System.Drawing.Point(510, 11);
             this.btnBuscar.TabIndex = 41;
@@ -87,7 +87,7 @@ namespace SLD_v1._0
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSalir.BackgroundImage = global::SLD_v1._0.Properties.Resources.exit_icon_icons_com_70975;
+            this.btnSalir.BackgroundImage = global::Adelante.Properties.Resources.exit_icon_icons_com_70975;
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSalir.Location = new System.Drawing.Point(616, 11);
             this.btnSalir.TabIndex = 42;
@@ -95,7 +95,7 @@ namespace SLD_v1._0
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnLimpiar.BackgroundImage = global::SLD_v1._0.Properties.Resources.reset_undo_arrow_icon_149006;
+            this.btnLimpiar.BackgroundImage = global::Adelante.Properties.Resources.reset_undo_arrow_icon_149006;
             this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(298, 10);
             this.btnLimpiar.TabIndex = 39;
@@ -160,7 +160,7 @@ namespace SLD_v1._0
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::SLD_v1._0.Properties.Resources.barcode_scanner_4249;
+            this.button1.BackgroundImage = global::Adelante.Properties.Resources.barcode_scanner_4249;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(230, 168);
@@ -184,9 +184,9 @@ namespace SLD_v1._0
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::SLD_v1._0.Properties.Resources.success_1050751;
+            this.pictureBox1.BackgroundImage = global::Adelante.Properties.Resources.success_1050751;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.ErrorImage = global::SLD_v1._0.Properties.Resources.success_105075;
+            this.pictureBox1.ErrorImage = global::Adelante.Properties.Resources.success_105075;
             this.pictureBox1.Location = new System.Drawing.Point(562, 336);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(119, 102);
@@ -195,7 +195,7 @@ namespace SLD_v1._0
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::SLD_v1._0.Properties.Resources.emblemunreadable_93487;
+            this.pictureBox2.BackgroundImage = global::Adelante.Properties.Resources.emblemunreadable_93487;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(443, 336);
             this.pictureBox2.Name = "pictureBox2";

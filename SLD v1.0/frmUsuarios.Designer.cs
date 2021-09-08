@@ -1,4 +1,4 @@
-﻿namespace SLD_v1._0
+﻿namespace Adelante
 {
     partial class frmUsuarios
     {
@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBoxcatarea = new System.Windows.Forms.CheckBox();
-            this.checkBoxcatusua = new System.Windows.Forms.CheckBox();
-            this.checkBoxcatcli = new System.Windows.Forms.CheckBox();
+            this.checkBoxValidate = new System.Windows.Forms.CheckBox();
+            this.checkBoxRegistry = new System.Windows.Forms.CheckBox();
+            this.checkBoxAddress = new System.Windows.Forms.CheckBox();
+            this.checkBoxNeighboors = new System.Windows.Forms.CheckBox();
+            this.checkBoxUsers = new System.Windows.Forms.CheckBox();
+            this.checkBoxClients = new System.Windows.Forms.CheckBox();
             this.lblconfir = new System.Windows.Forms.Label();
             this.txtpassconfirm = new txtBox.uctxtBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtnick = new txtBox.uctxtBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtcorreo = new txtBox.uctxtBox();
+            this.txtusername = new txtBox.uctxtBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtapellido = new txtBox.uctxtBox();
             this.txtnombre = new txtBox.uctxtBox();
@@ -56,9 +56,14 @@
             this.ckEstado = new System.Windows.Forms.CheckBox();
             this.ttEstado = new System.Windows.Forms.ToolTip(this.components);
             this.combopuesto = new escComboBox.escComboBox();
+            this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbAdelanteDataSet = new Adelante.dbAdelanteDataSet();
             this.txtcel = new escMaskTextBox.escMaskTxtBox();
+            this.roleTableAdapter = new Adelante.dbAdelanteDataSetTableAdapters.RoleTableAdapter();
             this.gbMenuContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbAdelanteDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // gbMenuContainer
@@ -118,12 +123,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBoxcatarea);
-            this.groupBox1.Controls.Add(this.checkBoxcatusua);
-            this.groupBox1.Controls.Add(this.checkBoxcatcli);
+            this.groupBox1.Controls.Add(this.checkBoxValidate);
+            this.groupBox1.Controls.Add(this.checkBoxRegistry);
+            this.groupBox1.Controls.Add(this.checkBoxAddress);
+            this.groupBox1.Controls.Add(this.checkBoxNeighboors);
+            this.groupBox1.Controls.Add(this.checkBoxUsers);
+            this.groupBox1.Controls.Add(this.checkBoxClients);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(495, 2);
@@ -133,65 +138,71 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Permisos";
             // 
-            // checkBox3
+            // checkBoxValidate
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(21, 131);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(145, 22);
-            this.checkBox3.TabIndex = 28;
-            this.checkBox3.Text = "Acceso - Validacion";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxValidate.AutoSize = true;
+            this.checkBoxValidate.Enabled = false;
+            this.checkBoxValidate.Location = new System.Drawing.Point(21, 131);
+            this.checkBoxValidate.Name = "checkBoxValidate";
+            this.checkBoxValidate.Size = new System.Drawing.Size(145, 22);
+            this.checkBoxValidate.TabIndex = 28;
+            this.checkBoxValidate.Text = "Acceso - Validacion";
+            this.checkBoxValidate.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBoxRegistry
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(21, 113);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(192, 22);
-            this.checkBox1.TabIndex = 27;
-            this.checkBox1.Text = "Mi control - Registrar visita";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxRegistry.AutoSize = true;
+            this.checkBoxRegistry.Enabled = false;
+            this.checkBoxRegistry.Location = new System.Drawing.Point(21, 113);
+            this.checkBoxRegistry.Name = "checkBoxRegistry";
+            this.checkBoxRegistry.Size = new System.Drawing.Size(192, 22);
+            this.checkBoxRegistry.TabIndex = 27;
+            this.checkBoxRegistry.Text = "Mi control - Registrar visita";
+            this.checkBoxRegistry.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxAddress
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(21, 93);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(166, 22);
-            this.checkBox2.TabIndex = 26;
-            this.checkBox2.Text = "Mi control - Domicilios";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxAddress.AutoSize = true;
+            this.checkBoxAddress.Enabled = false;
+            this.checkBoxAddress.Location = new System.Drawing.Point(21, 93);
+            this.checkBoxAddress.Name = "checkBoxAddress";
+            this.checkBoxAddress.Size = new System.Drawing.Size(166, 22);
+            this.checkBoxAddress.TabIndex = 26;
+            this.checkBoxAddress.Text = "Mi control - Domicilios";
+            this.checkBoxAddress.UseVisualStyleBackColor = true;
             // 
-            // checkBoxcatarea
+            // checkBoxNeighboors
             // 
-            this.checkBoxcatarea.AutoSize = true;
-            this.checkBoxcatarea.Location = new System.Drawing.Point(21, 71);
-            this.checkBoxcatarea.Name = "checkBoxcatarea";
-            this.checkBoxcatarea.Size = new System.Drawing.Size(201, 22);
-            this.checkBoxcatarea.TabIndex = 23;
-            this.checkBoxcatarea.Text = "Catalogo - Fraccionamientos";
-            this.checkBoxcatarea.UseVisualStyleBackColor = true;
+            this.checkBoxNeighboors.AutoSize = true;
+            this.checkBoxNeighboors.Enabled = false;
+            this.checkBoxNeighboors.Location = new System.Drawing.Point(21, 71);
+            this.checkBoxNeighboors.Name = "checkBoxNeighboors";
+            this.checkBoxNeighboors.Size = new System.Drawing.Size(201, 22);
+            this.checkBoxNeighboors.TabIndex = 23;
+            this.checkBoxNeighboors.Text = "Catalogo - Fraccionamientos";
+            this.checkBoxNeighboors.UseVisualStyleBackColor = true;
             // 
-            // checkBoxcatusua
+            // checkBoxUsers
             // 
-            this.checkBoxcatusua.AutoSize = true;
-            this.checkBoxcatusua.Location = new System.Drawing.Point(21, 27);
-            this.checkBoxcatusua.Name = "checkBoxcatusua";
-            this.checkBoxcatusua.Size = new System.Drawing.Size(145, 22);
-            this.checkBoxcatusua.TabIndex = 21;
-            this.checkBoxcatusua.Text = "Catalogo - Usuarios";
-            this.checkBoxcatusua.UseVisualStyleBackColor = true;
+            this.checkBoxUsers.AutoSize = true;
+            this.checkBoxUsers.Enabled = false;
+            this.checkBoxUsers.Location = new System.Drawing.Point(21, 27);
+            this.checkBoxUsers.Name = "checkBoxUsers";
+            this.checkBoxUsers.Size = new System.Drawing.Size(145, 22);
+            this.checkBoxUsers.TabIndex = 21;
+            this.checkBoxUsers.Text = "Catalogo - Usuarios";
+            this.checkBoxUsers.UseVisualStyleBackColor = true;
             // 
-            // checkBoxcatcli
+            // checkBoxClients
             // 
-            this.checkBoxcatcli.AutoSize = true;
-            this.checkBoxcatcli.Location = new System.Drawing.Point(21, 49);
-            this.checkBoxcatcli.Name = "checkBoxcatcli";
-            this.checkBoxcatcli.Size = new System.Drawing.Size(143, 22);
-            this.checkBoxcatcli.TabIndex = 22;
-            this.checkBoxcatcli.Text = "Catalogo - Clientes";
-            this.checkBoxcatcli.UseVisualStyleBackColor = true;
+            this.checkBoxClients.AutoSize = true;
+            this.checkBoxClients.Enabled = false;
+            this.checkBoxClients.Location = new System.Drawing.Point(21, 49);
+            this.checkBoxClients.Name = "checkBoxClients";
+            this.checkBoxClients.Size = new System.Drawing.Size(143, 22);
+            this.checkBoxClients.TabIndex = 22;
+            this.checkBoxClients.Text = "Catalogo - Clientes";
+            this.checkBoxClients.UseVisualStyleBackColor = true;
             // 
             // lblconfir
             // 
@@ -346,39 +357,39 @@
             this.label10.TabIndex = 106;
             this.label10.Text = "Celular";
             // 
-            // txtcorreo
+            // txtusername
             // 
-            this.txtcorreo.Ancho = 0;
-            this.txtcorreo.AutoComplete = false;
-            this.txtcorreo.AutoCompleteSource = null;
-            this.txtcorreo.BackColor = System.Drawing.SystemColors.Window;
-            this.txtcorreo.Background = System.Drawing.Color.Empty;
-            this.txtcorreo.Cancel = false;
-            this.txtcorreo.DisplayMember = null;
-            this.txtcorreo.Error = false;
-            this.txtcorreo.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.txtcorreo.ForeColor = System.Drawing.Color.Black;
-            this.txtcorreo.Location = new System.Drawing.Point(28, 283);
-            this.txtcorreo.Mascara = null;
-            this.txtcorreo.Mascaras_List = null;
-            this.txtcorreo.MaskCustom = false;
-            this.txtcorreo.MaskFecha = false;
-            this.txtcorreo.MaskNumeros = false;
-            this.txtcorreo.mensajeError = null;
-            this.txtcorreo.mensajeTag = "Introduce el correo";
-            this.txtcorreo.Name = "txtcorreo";
-            this.txtcorreo.OnlyNumbers = false;
-            this.txtcorreo.Password = false;
-            this.txtcorreo.Rango = 0D;
-            this.txtcorreo.Requerido = false;
-            this.txtcorreo.Size = new System.Drawing.Size(289, 21);
-            this.txtcorreo.TabIndex = 8;
-            this.txtcorreo.TipoNumero = txtBox.uctxtBox.typeNum.Ninguno;
-            this.txtcorreo.TituloError = null;
-            this.txtcorreo.UpperCase = false;
-            this.txtcorreo.Value = null;
-            this.txtcorreo.ValueMember = null;
-            this.txtcorreo.Zerofill = false;
+            this.txtusername.Ancho = 0;
+            this.txtusername.AutoComplete = false;
+            this.txtusername.AutoCompleteSource = null;
+            this.txtusername.BackColor = System.Drawing.SystemColors.Window;
+            this.txtusername.Background = System.Drawing.Color.Empty;
+            this.txtusername.Cancel = false;
+            this.txtusername.DisplayMember = null;
+            this.txtusername.Error = false;
+            this.txtusername.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.txtusername.ForeColor = System.Drawing.Color.Black;
+            this.txtusername.Location = new System.Drawing.Point(28, 283);
+            this.txtusername.Mascara = null;
+            this.txtusername.Mascaras_List = null;
+            this.txtusername.MaskCustom = false;
+            this.txtusername.MaskFecha = false;
+            this.txtusername.MaskNumeros = false;
+            this.txtusername.mensajeError = null;
+            this.txtusername.mensajeTag = "Introduce el correo";
+            this.txtusername.Name = "txtusername";
+            this.txtusername.OnlyNumbers = false;
+            this.txtusername.Password = false;
+            this.txtusername.Rango = 0D;
+            this.txtusername.Requerido = false;
+            this.txtusername.Size = new System.Drawing.Size(289, 21);
+            this.txtusername.TabIndex = 8;
+            this.txtusername.TipoNumero = txtBox.uctxtBox.typeNum.Ninguno;
+            this.txtusername.TituloError = null;
+            this.txtusername.UpperCase = false;
+            this.txtusername.Value = null;
+            this.txtusername.ValueMember = null;
+            this.txtusername.Zerofill = false;
             // 
             // label7
             // 
@@ -563,14 +574,12 @@
             // 
             this.combopuesto.BackColor = System.Drawing.Color.White;
             this.combopuesto.Cancel = false;
+            this.combopuesto.DataSource = this.roleBindingSource;
+            this.combopuesto.DisplayMember = "Name";
             this.combopuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combopuesto.Error = false;
             this.combopuesto.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combopuesto.FormattingEnabled = true;
-            this.combopuesto.Items.AddRange(new object[] {
-            "Recepcionista",
-            "Cosmetologa",
-            "Administrador"});
             this.combopuesto.Location = new System.Drawing.Point(28, 177);
             this.combopuesto.mensajeError = null;
             this.combopuesto.mensajeTag = null;
@@ -582,6 +591,17 @@
             this.combopuesto.TituloError = null;
             this.combopuesto.ValorDisplay = null;
             this.combopuesto.Value = "";
+            this.combopuesto.ValueMember = "Id";
+            // 
+            // roleBindingSource
+            // 
+            this.roleBindingSource.DataMember = "Role";
+            this.roleBindingSource.DataSource = this.dbAdelanteDataSet;
+            // 
+            // dbAdelanteDataSet
+            // 
+            this.dbAdelanteDataSet.DataSetName = "dbAdelanteDataSet";
+            this.dbAdelanteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtcel
             // 
@@ -597,6 +617,10 @@
             this.txtcel.Size = new System.Drawing.Size(130, 24);
             this.txtcel.TabIndex = 7;
             this.txtcel.TituloError = null;
+            // 
+            // roleTableAdapter
+            // 
+            this.roleTableAdapter.ClearBeforeFill = true;
             // 
             // frmUsuarios
             // 
@@ -616,7 +640,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtnick);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtcorreo);
+            this.Controls.Add(this.txtusername);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtapellido);
             this.Controls.Add(this.txtnombre);
@@ -636,7 +660,7 @@
             this.Controls.SetChildIndex(this.txtnombre, 0);
             this.Controls.SetChildIndex(this.txtapellido, 0);
             this.Controls.SetChildIndex(this.label7, 0);
-            this.Controls.SetChildIndex(this.txtcorreo, 0);
+            this.Controls.SetChildIndex(this.txtusername, 0);
             this.Controls.SetChildIndex(this.label10, 0);
             this.Controls.SetChildIndex(this.txtnick, 0);
             this.Controls.SetChildIndex(this.label11, 0);
@@ -652,6 +676,8 @@
             this.gbMenuContainer.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbAdelanteDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,9 +686,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBoxcatarea;
-        private System.Windows.Forms.CheckBox checkBoxcatusua;
-        private System.Windows.Forms.CheckBox checkBoxcatcli;
+        private System.Windows.Forms.CheckBox checkBoxNeighboors;
+        private System.Windows.Forms.CheckBox checkBoxUsers;
+        private System.Windows.Forms.CheckBox checkBoxClients;
         private System.Windows.Forms.Label lblconfir;
         private txtBox.uctxtBox txtpassconfirm;
         private System.Windows.Forms.Label label12;
@@ -670,7 +696,7 @@
         private System.Windows.Forms.Label label11;
         private txtBox.uctxtBox txtnick;
         private System.Windows.Forms.Label label10;
-        private txtBox.uctxtBox txtcorreo;
+        private txtBox.uctxtBox txtusername;
         private System.Windows.Forms.Label label7;
         private txtBox.uctxtBox txtapellido;
         private txtBox.uctxtBox txtnombre;
@@ -683,8 +709,11 @@
         private System.Windows.Forms.ToolTip ttEstado;
         private escComboBox.escComboBox combopuesto;
         private escMaskTextBox.escMaskTxtBox txtcel;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBoxRegistry;
+        private System.Windows.Forms.CheckBox checkBoxAddress;
+        private System.Windows.Forms.CheckBox checkBoxValidate;
+        private Adelante.dbAdelanteDataSet dbAdelanteDataSet;
+        private System.Windows.Forms.BindingSource roleBindingSource;
+        private Adelante.dbAdelanteDataSetTableAdapters.RoleTableAdapter roleTableAdapter;
     }
 }

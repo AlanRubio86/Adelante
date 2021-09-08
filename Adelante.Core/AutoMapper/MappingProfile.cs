@@ -14,6 +14,10 @@ namespace Adelante.Core.AutoMapper
             public MappingProfile()
             {
                 CreateMap<User, UserModel>().ReverseMap();
-            }
+                CreateMap<Role, RoleModel>().ReverseMap();
+                CreateMap<UserRole, UserRoleModel>().ReverseMap();
+                CreateMap<RolePermission, RolePermissionsModel>().ReverseMap();
+                CreateMap<Permission, PermissionModel>().ReverseMap();
+        }
         }
 }

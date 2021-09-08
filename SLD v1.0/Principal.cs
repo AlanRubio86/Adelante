@@ -8,8 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using escAlerta;
 using System.Data.SqlClient;
+using Adelante.Core.Models;
 using Microsoft.ApplicationBlocks.Data;
-namespace SLD_v1._0
+using Newtonsoft.Json;
+
+namespace Adelante
 {
     public partial class Principal : Form
     {
@@ -19,23 +22,50 @@ namespace SLD_v1._0
         }
 
         DataSet dts = null;
-        public void Permisos(DataSet dts)
+
+        private void DisableOptions()
+        {
+            toolStripUsers.Enabled = false;
+            toolStripClients.Enabled = false;
+            toolStripNeighboors.Enabled = false;
+            toolStripAddress.Enabled = false;
+            toolStripRegistry.Enabled = false;
+            toolStripValidate.Enabled = false;
+        }
+
+        public void Permisos(UserRoleModel userRoleModel)
         {
             try
             {
-                if (dts.Tables[0].Rows.Count > 0)
+                DisableOptions();
+
+                foreach (var permission in userRoleModel.Role.RolePermissions)
                 {
-                    foreach (DataRow row in dts.Tables[0].Rows)
+
+                    switch (permission.Permission.Name)
                     {
-
-
-                        //Catalogo-Usuarios
-                        usuarioToolStripMenuItem.Enabled = Convert.ToBoolean(row["Acceso_CatUsuarios"].ToString());
-                        //catalogo--Clientes
-                        clientesToolStripMenuItem1.Enabled = Convert.ToBoolean(row["Acceso_CatClientes"].ToString());
-
+                        case "Usuarios":
+                            toolStripUsers.Enabled = true;
+                            break;
+                        case "Clientes":
+                            toolStripClients.Enabled = true;
+                            break;
+                        case "Fraccionamientos":
+                            toolStripNeighboors.Enabled = true;
+                            break;
+                        case "Domicilios":
+                            toolStripAddress.Enabled = true;
+                            break;
+                        case "Registrar Visita":
+                            toolStripRegistry.Enabled = true;
+                            break;
+                        case "Validacion":
+                            toolStripValidate.Enabled = true;
+                            break;
                     }
                 }
+
+
             }
             catch (Exception e)
             {
@@ -55,14 +85,13 @@ namespace SLD_v1._0
                 if (result.Equals(DialogResult.OK))
                 {
                     this.Visible = true;
-                   // Permisos(SLD_v1._0.Properties.Settings.Default.Accesos);
-                    //DataTable dtUsuario = SLD_v1._0.Properties.Settings.Default.Accesos.Tables[0];
-                    //usuarioToolStripMenuItem1.Text = "Usuario : " + dtUsuario.Rows[0]["Nombre"].ToString();
-                    //lblInicioSesion.Text = "Inicio de Sesión : " + DateTime.Now;
+                    UserModel user = JsonConvert.DeserializeObject<UserModel>(Properties.Settings.Default.Accesos);
+                    Permisos(user.UserRoles.First());
+                    usuarioToolStripMenuItem1.Text = $"Usuario : {user.Name} {user.LastName}";
                 }
                 else
                 {
-                    SLD_v1._0.Properties.Settings.Default.Sesion = false;
+                    Properties.Settings.Default.Sesion = false;
                     this.Close();
 
                 }
@@ -73,11 +102,11 @@ namespace SLD_v1._0
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Alerta A = new Alerta();
-            DialogResult result = A.MessageAlert("Deseas Salir Del Sistema", "Sistema de Administracion y Gestion De Citas", Alerta.MessageIcon.QuestionVista, Alerta.MessageButton.OkCancel);
+            DialogResult result = A.MessageAlert("Deseas Salir Del Sistema", "Sistema de Control de Visitantes", Alerta.MessageIcon.QuestionVista, Alerta.MessageButton.OkCancel);
             if (result.Equals(DialogResult.Cancel))
             {
 
-                if (SLD_v1._0.Properties.Settings.Default.Sesion == false)
+                if (Properties.Settings.Default.Sesion == false)
                 {
                     // e.Cancel = false;
                     e.Cancel = true;
@@ -87,13 +116,13 @@ namespace SLD_v1._0
                     if (result.Equals(DialogResult.OK))
                     {
                         this.Visible = true;
-                        Permisos(SLD_v1._0.Properties.Settings.Default.Accesos);
-                        DataTable dtUsuario = SLD_v1._0.Properties.Settings.Default.Accesos.Tables[0];
-                        usuarioToolStripMenuItem1.Text = "Usuario : " + dtUsuario.Rows[0]["Nombre"].ToString();
+                        UserModel user = JsonConvert.DeserializeObject<UserModel>(Properties.Settings.Default.Accesos);
+                        Permisos(user.UserRoles.First());
+                        usuarioToolStripMenuItem1.Text = $"Usuario : {user.Name} {user.LastName}";
                     }
                     else
                     {
-                        SLD_v1._0.Properties.Settings.Default.Sesion = false;
+                        Properties.Settings.Default.Sesion = false;
                         this.Close();
 
                     }
@@ -116,9 +145,9 @@ namespace SLD_v1._0
             if (result.Equals(DialogResult.OK))
             {
                 this.Visible = true;
-                Permisos(SLD_v1._0.Properties.Settings.Default.Accesos);
-                DataTable dtUsuario = SLD_v1._0.Properties.Settings.Default.Accesos.Tables[0];
-                usuarioToolStripMenuItem1.Text = "Usuario : " + dtUsuario.Rows[0]["Nombre"].ToString();
+                UserModel user = JsonConvert.DeserializeObject<UserModel>(Properties.Settings.Default.Accesos);
+                Permisos(JsonConvert.DeserializeObject<UserRoleModel>(Properties.Settings.Default.Accesos));
+                usuarioToolStripMenuItem1.Text = $"Usuario : {user.Name} {user.LastName}";
             }
             else
             {
